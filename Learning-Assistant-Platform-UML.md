@@ -2,20 +2,31 @@
 
 ## 1. 用例图
 ```mermaid
-usecase
-  title "智能学习助手平台-用例图"
-  actor "用户" as User
-  actor "管理员" as Admin
-  User -- (注册/登录)
-  User -- (上传学习资料)
-  User -- (浏览/搜索/下载资料)
-  User -- (参与智能问答)
-  User -- (查看学习进度)
-  User -- (设定学习目标)
-  User -- (导出学习记录)
-  Admin -- (审核/删除资料)
-  Admin -- (管理用户)
-  Admin -- (查看系统日志)
+graph TD
+  User(用户)
+  Admin(管理员)
+  RegLogin(注册/登录)
+  Upload(上传学习资料)
+  Browse(浏览/搜索/下载资料)
+  QA(参与智能问答)
+  Progress(查看学习进度)
+  Goal(设定学习目标)
+  Export(导出学习记录)
+  Audit(审核/删除资料)
+  ManageUser(管理用户)
+  ViewLog(查看系统日志)
+
+  User -- 注册/登录 --> RegLogin
+  User -- 上传学习资料 --> Upload
+  User -- 浏览/搜索/下载资料 --> Browse
+  User -- 参与智能问答 --> QA
+  User -- 查看学习进度 --> Progress
+  User -- 设定学习目标 --> Goal
+  User -- 导出学习记录 --> Export
+
+  Admin -- 审核/删除资料 --> Audit
+  Admin -- 管理用户 --> ManageUser
+  Admin -- 查看系统日志 --> ViewLog
 ```
 
 ## 2. 类图
