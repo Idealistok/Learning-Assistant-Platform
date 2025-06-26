@@ -31,3 +31,45 @@ git push -u origin main
 ```
 
 > 如遇推送权限问题，请先在GitHub生成并配置SSH Key或使用账号密码/Token。 
+
+### 1. 配置git代理
+
+```bash
+git config --global http.proxy http://127.0.0.1:7897
+git config --global https.proxy http://127.0.0.1:7897
+```
+
+如果你的VPN只支持SOCKS5代理，也可以这样设置：
+
+```bash
+git config --global http.proxy socks5://127.0.0.1:7897
+git config --global https.proxy socks5://127.0.0.1:7897
+```
+
+> **注意**：  
+> - 如果你的VPN客户端明确标注"HTTP端口"，优先用http://开头。  
+> - 如果标注"SOCKS5端口"，优先用socks5://开头。  
+> - 你可以都试一下，哪个快用哪个。
+
+### 2. 测试拉取/推送
+
+设置完代理后，重新执行：
+
+```bash
+git pull origin main --rebase
+```
+或
+```bash
+git push -u origin main
+```
+
+### 3. 取消代理（如不用时）
+
+如果以后不需要代理，可以用下面命令取消：
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+如还有问题，把报错信息发给我，我会继续帮你排查！ 
