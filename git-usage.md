@@ -73,3 +73,24 @@ git config --global --unset https.proxy
 ```
 
 如还有问题，把报错信息发给我，我会继续帮你排查！ 
+
+## 解决冲突
+
+如果遇到冲突，可以按照以下步骤解决：
+
+1. 解决冲突后，添加冲突文件到暂存区
+```bash
+git add .
+```
+
+2. 继续rebase
+```bash
+git rebase --continue
+```
+
+3. 再次推送
+```bash
+git push -u origin main
+```
+
+如遇冲突或有其他报错，把提示发给我，我会帮你继续解决！ 
